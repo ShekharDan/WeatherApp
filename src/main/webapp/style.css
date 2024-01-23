@@ -1,0 +1,282 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right,  #2b40ff,#07121a);
+}
+
+.mainContainer {
+  width: 25rem;
+  height: auto;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+}
+.DateTime{
+	.timeDetails {
+  width: 25rem;
+  height: auto;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+}
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50px;
+  background-color: #E5E0FF;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 30px 30px 30px -10px rgba(0, 0, 0, 0.15),
+      inset 15px 15px 10px rgba(255, 255, 255, 0.75),
+      -15px -15px 35px rgba(255, 255, 255, 0.55),
+      inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+}
+.clock::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #e91e63;
+  z-index: 2;
+  box-shadow: 0 0 0 1px #e91e63,
+  0 0 0 3px #fff,
+  0 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+.clock .numbers {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #152b4a;
+  top: 35px;
+  left: 35px;
+  bottom: 35px;
+  right: 35px;
+  box-shadow: 5px 5px 15px #152b4a,
+      inset 5px 5px 5px rgba(255, 255, 255, 0.55),
+      -6px -6px 10px rgba(255, 255, 255, 1);
+}
+span {
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  color: #fff;
+  font-size: 1.25em;
+}
+.twelve {
+  /* Not Mandatory */
+  transform: rotate(360deg);
+}
+.three {
+  transform: rotate(90deg);
+}
+.six {
+  transform: rotate(180deg);
+}
+.nine {
+  transform: rotate(270deg);
+}
+b {
+  font-weight: 700;
+  display: block;
+}
+.three b {
+  transform: rotate(-90deg);
+}
+.six b {
+  transform: rotate(-180deg);
+}
+.nine b {
+  transform: rotate(-270deg);
+}
+.clock .numbers::before {
+  position: absolute;
+  content: "";
+  top: 35px;
+  left: 35px;
+  bottom: 35px;
+  right: 35px;
+  background: linear-gradient(#2196f3, #e91e63);
+  border-radius: 50%;
+  animation: rotateAnimation 2s linear infinite;
+}
+.clock .numbers::after {
+  position: absolute;
+  content: "";
+  top: 38px;
+  left: 38px;
+  bottom: 38px;
+  right: 38px;
+  background: #152b4a;
+  border-radius: 50%;
+}
+.time {
+  position: absolute;
+  top: 0;
+  right: 0;;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+.time i {
+  position: absolute;
+  width: 3px;
+  background-color: #fff;
+  height: 50%;
+  transform-origin: bottom;
+  transform: scaleY(0.55);
+}
+.hrs i {
+  transform: scaleY(0.3);
+  width: 4px;
+}
+.min i {
+  transform: scaleY(0.45);
+}
+.sec i {
+  width: 2px;
+  transform: scaleY(0.55);
+  background-color: #e91e63;
+  box-shadow: 0 30px 0 #e91e63;
+}
+@keyframes rotateAnimation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+}
+.searchInput {
+  width: 100%;
+  display: flex;
+  padding: 1rem 1rem;
+  justify-content: center;
+}
+
+.searchInput input {
+  width: 100%;
+  height: 2rem;
+  outline: none;
+  font-size: 1rem;
+  color: #525050;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid #b3b3b3;
+}
+
+.searchInput input:focus {
+  border: 1px solid #9c9dde;
+}
+
+.searchInput button {
+  width: 2.2rem;
+  height: 2rem;
+  cursor: pointer;
+  color: #9b9b9b;
+  border-radius: 50%;
+  margin-left: 0.4rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  border: 1px solid #b3b3b3;
+}
+
+.searchInput button:hover {
+  color: #fff;
+  background-color: #9c9dde;
+  border: 1px solid #9c9dde;
+}
+
+.weatherIcon {
+  display: flex;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  justify-content: center;
+}
+
+.weatherIcon img {
+  max-width: 100%;
+  width: 8rem;
+}
+
+.weatherDetails .temp{
+ font-size: 2rem;
+}
+.cityDetails {
+  color: #323232;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.cityDetails .date {
+  color: #323232;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.windDetails {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: space-around;
+}
+
+.windDetails .humidityBox {
+  display: flex;
+  font-size: 1rem;
+  color: #323232;
+}
+
+.windDetails .humidity .humidityValue {
+ text-align: center;
+  font-size: 2rem;
+  color: #323232;
+}
+
+.windDetails .humidityBox img {
+  max-height: 3rem;
+  margin-right: 0.5rem;
+}
+
+.windDetails .windSpeed {
+  display: flex;
+  font-size: 1rem;
+  color: #323232;
+}
+
+.windDetails .windSpeed img {
+  max-height: 3rem;
+  margin-right: 0.5rem;
+}
+
+
+image-logo{
+        height: auto;
+        width: auto;
+        filter: drop-shadow(20px 10px 10px black);
+      }
